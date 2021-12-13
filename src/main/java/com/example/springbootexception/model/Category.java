@@ -1,6 +1,7 @@
 package com.example.springbootexception.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -17,7 +18,7 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    @JsonBackReference
+    @JsonManagedReference
     private List<Product> products;
 
     public Category(String name) {

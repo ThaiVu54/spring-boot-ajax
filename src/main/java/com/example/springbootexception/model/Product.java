@@ -1,5 +1,6 @@
 package com.example.springbootexception.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -18,7 +19,7 @@ public class Product {
 //    private String image;
 
     @ManyToOne(targetEntity = Category.class)
-    @JsonManagedReference
+    @JsonBackReference
     private Category category;
 
     public Product(Long id, String name, String description, double price, String image, Category category) {
